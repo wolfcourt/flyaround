@@ -56,11 +56,6 @@ class PlaneModel
      */
     private $isAvailable;
 
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="plane")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $planes;
 
     /**
      * Get id

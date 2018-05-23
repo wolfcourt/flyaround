@@ -44,4 +44,5 @@ class SiteController extends Controller
             'site' => $site,
         ));
     }
+
 }

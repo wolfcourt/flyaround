@@ -70,28 +70,6 @@ class Flight
      */
     private $wasDone;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Site", inversedBy="arrivals")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $arrival;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\PlaneModel", inversedBy="planes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $plane;
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="pilots")
-     */
-    private $pilot;
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-       return $this->departure  . " " . $this->arrival;
-    }
 
     /**
      * Get id
@@ -101,54 +79,6 @@ class Flight
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getArrival()
-    {
-        return $this->arrival;
-    }
-
-    /**
-     * @param mixed $arrival
-     */
-    public function setArrival($arrival)
-    {
-        $this->arrival = $arrival;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPlane()
-    {
-        return $this->plane;
-    }
-
-    /**
-     * @param mixed $plane
-     */
-    public function setPlane($plane)
-    {
-        $this->plane = $plane;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPilot()
-    {
-        return $this->pilot;
-    }
-
-    /**
-     * @param mixed $pilot
-     */
-    public function setPilot($pilot)
-    {
-        $this->pilot = $pilot;
     }
 
     /**

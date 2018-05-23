@@ -1,0 +1,213 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Review
+ *
+ * @ORM\Table(name="review")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ReviewRepository")
+ */
+class Review
+{
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="reviewAuthors")
+     * @ORM\JoinColumn(nullable=false)
+     *
+     */
+    private $reviewAuthor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+     */
+
+    private $userRated;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+
+
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="user_rated_id", type="integer")
+     */
+    private $userRatedId;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="review_author_id", type="integer")
+     */
+    private $reviewAuthorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text")
+     */
+    private $text;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="publicationDate", type="datetime")
+     */
+    private $publicationDate;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="note", type="smallint")
+     */
+    private $note;
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return "$this->id";
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set userRatedId
+     *
+     * @param integer $userRatedId
+     *
+     * @return Review
+     */
+    public function setUserRatedId($userRatedId)
+    {
+        $this->userRatedId = $userRatedId;
+
+        return $this;
+    }
+
+    /**
+     * Get userRatedId
+     *
+     * @return int
+     */
+    public function getUserRatedId()
+    {
+        return $this->userRatedId;
+    }
+
+    /**
+     * Set reviewAuthorId
+     *
+     * @param integer $reviewAuthorId
+     *
+     * @return Review
+     */
+    public function setReviewAuthorId($reviewAuthorId)
+    {
+        $this->reviewAuthorId = $reviewAuthorId;
+
+        return $this;
+    }
+
+    /**
+     * Get reviewAuthorId
+     *
+     * @return int
+     */
+    public function getReviewAuthorId()
+    {
+        return $this->reviewAuthorId;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $text
+     *
+     * @return Review
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * Set publicationDate
+     *
+     * @param \DateTime $publicationDate
+     *
+     * @return Review
+     */
+    public function setPublicationDate($publicationDate)
+    {
+        $this->publicationDate = $publicationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get publicationDate
+     *
+     * @return \DateTime
+     */
+    public function getPublicationDate()
+    {
+        return $this->publicationDate;
+    }
+
+    /**
+     * Set note
+     *
+     * @param integer $note
+     *
+     * @return Review
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return int
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+}
+

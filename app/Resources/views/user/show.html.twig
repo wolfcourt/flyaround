@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Phonenumber</th>
+                <td>{{ user.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Birthdate</th>
+                <td>{% if user.birthDate %}{{ user.birthDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Creationdate</th>
+                <td>{% if user.creationDate %}{{ user.creationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ user.note }}</td>
+            </tr>
+            <tr>
+                <th>Iscertifiedpilot</th>
+                <td>{{ user.isCertifiedPilot }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
