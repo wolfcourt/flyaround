@@ -77,10 +77,27 @@ class Site
     private $city;
 
     /**
-     * @@ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="arrival")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="arrival")
      * @ORM\JoinColumn(nullable=false)
      */
     private $arrivals;
+
+
+    /**
+     * @return mixed
+     */
+    public function getArrivals()
+    {
+        return $this->arrivals;
+    }
+
+    /**
+     * @param mixed $arrivals
+     */
+    public function setArrivals($arrivals)
+    {
+        $this->arrivals = $arrivals;
+    }
 
     /**
      * Get id

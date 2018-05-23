@@ -41,7 +41,57 @@ class Reservation
      * @ORM\Column(name="wasDone", type="boolean")
      */
     private $wasDone;
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="passengers")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $passenger;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Flight", inversedBy="flights")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $flight;
+
+    /**
+     * @return mixed
+     */
+    public function getPassenger()
+    {
+        return $this->passenger;
+    }
+
+    /**
+     * @param mixed $passenger
+     */
+    public function setPassenger($passenger)
+    {
+        $this->passenger = $passenger;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFlight()
+    {
+        return $this->flight;
+    }
+
+    /**
+     * @param mixed $flight
+     */
+    public function setFlight($flight)
+    {
+        $this->flight = $flight;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+       return $this->id;
+    }
 
     /**
      * Get id

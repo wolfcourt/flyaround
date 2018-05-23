@@ -29,6 +29,9 @@
                         <li>
                             <a href="{{ path('site_show', { 'id': site.id }) }}">show</a>
                         </li>
+                        <li>
+                            <a href="{{ path('site_edit', { 'id': site.id }) }}">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -36,5 +39,9 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('site_new') }}">Create a new site</a>
+        </li>
+    </ul>
 {% endblock %}

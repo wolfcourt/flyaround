@@ -59,14 +59,14 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="note", type="smallint", nullable=true)
+     * @ORM\Column(name="note", type="smallint")
      */
     private $note;
 
     /**
-     * @var bool
+     * @var int
      *
-     * @ORM\Column(name="isCertifiedPilot", type="boolean")
+     * @ORM\Column(name="isCertifiedPilot", type="smallint")
      */
     private $isCertifiedPilot;
 
@@ -315,7 +315,7 @@ class User
     /**
      * Get isCertifiedPilot
      *
-     * @return bool
+     * @return int
      */
     public function getIsCertifiedPilot()
     {

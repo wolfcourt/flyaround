@@ -6,21 +6,21 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FlightType extends AbstractType
+class SiteType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nbFreeSeats')->add('seatPrice')->add('takeOffTime')->add('publicationDate')->add('description')->add('wasDone')->add('departure')->add('arrival')->add('plane')->add('pilot');
+        $builder->add('name')->add('icao')->add('latitude')->add('longitude')->add('city');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Flight'
+            'data_class' => 'AppBundle\Entity\Site'
         ));
     }
 
@@ -29,7 +29,7 @@ class FlightType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_flight';
+        return 'appbundle_site';
     }
 
 

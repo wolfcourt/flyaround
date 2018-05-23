@@ -85,6 +85,13 @@ class Flight
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="pilots")
      */
     private $pilot;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="flight")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $flights;
+
     /**
      * @return string
      */
